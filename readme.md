@@ -15,9 +15,10 @@ import makeSure from 'make-sure';
 
 const myFunc = (a, b) => {
   makeSure(a).is.a.String.eq('foo');
-  makeSure(b).is.a.Boolean;
+  if (makeSure.isBoolean(b) === false)
+    console.log('uhoh, b is NOT a Boolean');
 
-  // do things with a === 'foo' and b === false
+  // a strictly equals 'foo' and you've been warned if b isn't a Boolean
 
   console.log('Yay!');
 };
