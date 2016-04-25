@@ -1,4 +1,4 @@
-# Make Sure
+# Make Sure [![Build Status](https://secure.travis-ci.org/ben-bradley/make-sure.png?branch=master)](https://travis-ci.org/ben-bradley/make-sure)
 
 Fluently validate that your function arguments are what you expect.
 
