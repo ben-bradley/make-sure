@@ -5,22 +5,15 @@ import passthroughs from './passthroughs';
 import validators from './validators';
 import is from './is';
 
-const makeSure = (value) => {
+const getters = [].concat(passthroughs, types);
 
-  let root = Object.defineProperty({}, 'value', { value });
+const makeSure = (value) =>
+  getters.reduce((root, { property, get }) =>
+    Object.defineProperty(root, property, { get }),
+    Object.assign({}, { value }, validators)
+  );
 
-  passthroughs.reduce((o, { property, get }) =>
-    Object.defineProperty(o, property, { get }), root);
-
-  types.reduce((o, { property, get }) =>
-    Object.defineProperty(o, property, { get }), root);
-
-  validators.reduce((o, { property, validate }) =>
-    root[property] = validate, root);
-
-  return root;
-};
-
+// provide access to the type validators
 Object.assign(makeSure, is);
 
 // oink!

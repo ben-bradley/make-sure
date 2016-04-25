@@ -22,31 +22,17 @@ var _is2 = _interopRequireDefault(_is);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var getters = [].concat(_passthroughs2.default, _types2.default);
+
 var makeSure = function makeSure(value) {
-
-  var root = Object.defineProperty({}, 'value', { value: value });
-
-  _passthroughs2.default.reduce(function (o, _ref) {
+  return getters.reduce(function (root, _ref) {
     var property = _ref.property;
     var get = _ref.get;
-    return Object.defineProperty(o, property, { get: get });
-  }, root);
-
-  _types2.default.reduce(function (o, _ref2) {
-    var property = _ref2.property;
-    var get = _ref2.get;
-    return Object.defineProperty(o, property, { get: get });
-  }, root);
-
-  _validators2.default.reduce(function (o, _ref3) {
-    var property = _ref3.property;
-    var validate = _ref3.validate;
-    return root[property] = validate;
-  }, root);
-
-  return root;
+    return Object.defineProperty(root, property, { get: get });
+  }, Object.assign({}, { value: value }, _validators2.default));
 };
 
+// provide access to the type validators
 Object.assign(makeSure, _is2.default);
 
 // oink!

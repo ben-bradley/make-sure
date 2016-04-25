@@ -1,6 +1,6 @@
 {
   "name": "make-sure",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Fluently validate that your function arguments are what you expect.",
   "url": "https://github.com/ben-bradley/make-sure.git",
   "main": "index.js",
