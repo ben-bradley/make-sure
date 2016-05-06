@@ -12,6 +12,8 @@ var _util = require('../util');
 
 var _util2 = _interopRequireDefault(_util);
 
+var _stream = require('stream');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var stringifySchema = _util2.default.stringifySchema;
@@ -41,7 +43,9 @@ var types = [{ getter: 'String', values: ['foo', '1', 'true', ''] }, { getter: '
   })] },
 // { getter: 'Generator',  values: [ function* () { yield true; } ]      },
 // { getter: 'Symbol',     values: [ Symbol('foo') ]                     },
-{ getter: 'Map', values: [new Map()] }, { getter: 'Set', values: [new Set()] }, { getter: 'WeakMap', values: [new WeakMap()] }, { getter: 'WeakSet', values: [new WeakSet()] }];
+{ getter: 'Map', values: [new Map()] }, { getter: 'Set', values: [new Set()] }, { getter: 'WeakMap', values: [new WeakMap()] }, { getter: 'WeakSet', values: [new WeakSet()] }, { getter: 'Stream', values: [new _stream.Transform({
+    transform: function transform() {}
+  })] }];
 
 var valuesNot = function valuesNot(type) {
   return types.filter(function (_ref) {

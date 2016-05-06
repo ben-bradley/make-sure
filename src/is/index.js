@@ -20,6 +20,7 @@ import isWeakMap from './WeakMap';
 import isWeakSet from './WeakSet';
 import isTruthy from './Truthy';
 import isFalsy from './Falsy';
+import isStream from './Stream';
 
 export default {
   isString,
@@ -41,5 +42,6 @@ export default {
   isWeakMap,
   isWeakSet,
   isTruthy,
-  isFalsy
+  isFalsy,
+  isStream
 };

@@ -22,7 +22,8 @@ const types = [
   { property: 'WeakMap', check: is.isWeakMap },
   { property: 'WeakSet', check: is.isWeakSet },
   { property: 'Truthy', check: is.isTruthy },
-  { property: 'Falsy', check: is.isFalsy }
+  { property: 'Falsy', check: is.isFalsy },
+  { property: 'Stream', check: is.isStream }
 ].map(({ property, check }) => ({
   property,
   get() {

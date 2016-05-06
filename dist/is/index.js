@@ -84,6 +84,10 @@ var _Falsy = require('./Falsy');
 
 var _Falsy2 = _interopRequireDefault(_Falsy);
 
+var _Stream = require('./Stream');
+
+var _Stream2 = _interopRequireDefault(_Stream);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
@@ -106,5 +110,6 @@ exports.default = {
   isWeakMap: _WeakMap2.default,
   isWeakSet: _WeakSet2.default,
   isTruthy: _Truthy2.default,
-  isFalsy: _Falsy2.default
+  isFalsy: _Falsy2.default,
+  isStream: _Stream2.default
 };

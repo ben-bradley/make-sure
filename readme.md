@@ -220,6 +220,17 @@ makeSure.isWeakSet(new WeakSet()); // returns true
 makeSure.isWeakSet(new Map()); // returns false
 ```
 
+### Stream / isStream()
+
+```javascript
+const stream = new Transform({ transform() => {} });
+
+makeSure(stream).is.a.Stream; // doesn't throw
+makeSure('').is.a.Stream; // throws
+makeSure.isStream(stream); // returns true
+makeSure.isStream(''); // returns false
+```
+
 ## Tests!
 
 Currently, there are over 700 tests!
@@ -233,3 +244,8 @@ npm test
 `should`
 `lodash`
 `is`
+
+## Versions
+
+- 1.1.0 - Added `isStream()` and `makeSure().Stream`
+- 1.0.0 - Initial release
