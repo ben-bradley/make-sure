@@ -3,6 +3,7 @@
 import should from 'should';
 import makeSure from '../';
 import util from '../util';
+import { Transform } from 'stream';
 
 const { stringifySchema } = util;
 
@@ -32,7 +33,8 @@ const types = [
   { getter: 'Map',        values: [ new Map() ]                         },
   { getter: 'Set',        values: [ new Set() ]                         },
   { getter: 'WeakMap',    values: [ new WeakMap() ]                     },
-  { getter: 'WeakSet',    values: [ new WeakSet() ]                     }
+  { getter: 'WeakSet',    values: [ new WeakSet() ]                     },
+  { getter: 'Stream',     values: [ new Transform({ transform() {} }) ] }
 ];
 
 const valuesNot = (type) => types
