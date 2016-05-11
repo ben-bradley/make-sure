@@ -247,5 +247,6 @@ npm test
 
 ## Versions
 
+- 1.1.1 - Fix `is/Object.js`
 - 1.1.0 - Added `isStream()` and `makeSure().Stream`
 - 1.0.0 - Initial release
