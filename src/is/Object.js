@@ -1,9 +1,10 @@
 'use strict';
 
 import isStream from './Stream';
+import isUndefined from './Undefined';
 
 const isObject = (object) =>
-  object &&
+  isUndefined(object) === false &&
   object.toString &&
   object.toString() === '[object Object]' &&
   object instanceof Promise === false &&
